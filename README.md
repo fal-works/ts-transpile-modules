@@ -2,9 +2,15 @@
 
 Transpile [TypeScript](https://www.typescriptlang.org/) modules into JavaScript.
 
-What it does is just calling `transpileModule()` of the [TypeScript API](https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API) for multiple files in a given directory.
+What it does is just calling `transpileModule()` of [TypeScript API](https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API) for multiple files in a given directory.
 
-Not very well tested.
+Optional features:
+
+- Cleanup output directory before transpiling
+- Replace any string in each code before/after transpiling
+- Emit output files (either way you are able to use the transpilation results)
+
+Not very well tested, though.
 
 
 ## Usage
