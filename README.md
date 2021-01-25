@@ -32,7 +32,7 @@ run();
 
 ## CLI
 
-Run `ts-transpile-modules` command with the following options.
+Use `ts-transpile-modules` command with the following options (limited functionality compared to the API).
 
 ```text
 --srcDir   Source directory path. (default: src)
