@@ -34,6 +34,7 @@
   "scripts": {
     "build": "rimraf lib && tsc && npm run format:lib",
     "preformat:lib": "eslint --fix --no-ignore lib/**/*.js",
-    "format:lib": "prettier --write lib/**/*.{js,ts}"
+    "format:lib": "prettier --write lib/**/*.{js,ts}",
+    "dogfood": "node test/dogfooding.js"
   }
 }
