@@ -13,7 +13,7 @@ Optional features:
 Not very well tested, though.
 
 
-## Usage
+## API
 
 ```js
 import { transpileModules } from "@fal-works/ts-transpile-modules";
@@ -27,4 +27,17 @@ const run = async () => {
 };
 
 run();
+```
+
+
+## CLI
+
+Run `ts-transpile-modules` command with the following options.
+
+```text
+--srcDir   Source directory path. (default: src)
+--outDir   Output directory path. (required)
+--clean    Removes outDir before transpiling. (optional)
+--target   Any key of ts.ScriptTarget e.g. ES2015. (optional)
+--module   Any key of ts.ModuleKind e.g. ES2015. (optional)
 ```

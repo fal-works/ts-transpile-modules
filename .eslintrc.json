@@ -1,6 +1,6 @@
 // https://eslint.org/docs/user-guide/configuring
 {
-  "ignorePatterns": ["/lib/", "/test/out/"],
+  "ignorePatterns": ["/lib/", "/bin/", "/test/out/"],
 
   // config common to all
   "env": {
@@ -16,13 +16,13 @@
   "overrides": [
     // config with basic rules
     {
-      "files": ["src/**/*.ts", "test/**/*.js"],
+      "files": ["src/**/*.ts", "src-bin/**/*.ts", "test/**/*.js"],
       "extends": ["eslint:recommended", "prettier"]
     },
 
     // config for TypeScript
     {
-      "files": ["src/**/*.ts"],
+      "files": ["src/**/*.ts", "src-bin/**/*.ts"],
       "plugins": ["@typescript-eslint"],
       "parser": "@typescript-eslint/parser",
       "extends": [
