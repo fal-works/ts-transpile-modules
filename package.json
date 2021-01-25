@@ -1,0 +1,39 @@
+{
+  "name": "@fal-works/ts-transpile-modules",
+  "description": "Transpile TypeScript modules into JavaScript.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "FAL",
+  "keywords": [
+    "typescript",
+    "build"
+  ],
+  "files": [
+    "lib",
+    "src"
+  ],
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "type": "module",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "fast-glob": "^3.2.5",
+    "typescript": "^4.1.3"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.22",
+    "@typescript-eslint/eslint-plugin": "4.14.0",
+    "@typescript-eslint/parser": "^4.14.0",
+    "eslint": "7.18.0",
+    "eslint-config-prettier": "^7.2.0",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2"
+  },
+  "scripts": {
+    "build": "rimraf lib && tsc && npm run format:lib",
+    "preformat:lib": "eslint --fix --no-ignore lib/**/*.js",
+    "format:lib": "prettier --write lib/**/*.{js,ts}"
+  }
+}
