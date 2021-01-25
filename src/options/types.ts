@@ -6,7 +6,9 @@ import type { Pattern } from "../util/glob";
  */
 export type Options = {
   /**
-   * `true` (default) for removing `outDir` before transpilation.
+   * `true` for removing `outDir` before transpilation.
+   *
+   * Default: `false`
    */
   cleanBuild: boolean;
 
