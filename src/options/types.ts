@@ -10,7 +10,7 @@ export type Options = {
    *
    * Default: `false`
    */
-  cleanBuild: boolean;
+  clean: boolean;
 
   /**
    * Glob pattern for source files to include.

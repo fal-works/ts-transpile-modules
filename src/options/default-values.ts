@@ -6,7 +6,7 @@ const emptyObject = Object.freeze({});
 const nullReplacer = (code: string) => code;
 
 const baseOptions: Options = Object.freeze({
-  cleanBuild: false,
+  clean: false,
   include: ["**/*.{ts,tsx}"],
   preTranspile: nullReplacer,
   postTranspile: nullReplacer,

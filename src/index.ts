@@ -26,7 +26,7 @@ export const transpileModules = async (
   options?: Partial<Options>
 ): Promise<Result[]> => {
   const {
-    cleanBuild,
+    clean,
     include,
     exclude,
     preTranspile,
@@ -38,7 +38,7 @@ export const transpileModules = async (
 
   const replaceExtension = createExtensionReplacer(extensionMap);
 
-  if (cleanBuild) await rm(outDir);
+  if (clean) await rm(outDir);
   const files = await glob(srcDir, include, exclude);
 
   const transpileAll = files.map(async (srcFileRelPath) => {
