@@ -1,4 +1,4 @@
-export const help = () => {
+export const help = (): never => {
   console.log();
   console.group();
 

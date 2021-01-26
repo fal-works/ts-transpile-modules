@@ -1,6 +1,6 @@
 export const createExtensionReplacer = (
   extensionMap: Record<string, string>
-) => {
+): ((filepath: string) => string) => {
   const table = Array.from(Object.entries(extensionMap));
   const replacers = table.map(([from, to]) => {
     const regExp = new RegExp(`${from}$`);
