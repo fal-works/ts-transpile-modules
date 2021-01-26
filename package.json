@@ -47,6 +47,7 @@
     "build:bin": "rimraf bin && tsc --project src-bin && pnpm run format:bin",
     "preformat:bin": "eslint --fix --no-ignore bin/**/*.js",
     "format:bin": "prettier --write bin/**/*.{js,ts}",
+    "lint": "eslint src/",
     "dogfood": "node test/dogfooding.js",
     "dogfood-cli": "node bin/main.js -o test/out --clean --target ES2019"
   }
