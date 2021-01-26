@@ -25,7 +25,6 @@
       "files": ["src/**/*.ts", "src-bin/**/*.ts"],
       "plugins": ["@typescript-eslint"],
       "parser": "@typescript-eslint/parser",
-      "parserOptions": { "project": "tsconfig.json" },
       "extends": [
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
@@ -33,10 +32,25 @@
       ],
       "rules": {
         "no-fallthrough": "off", // already checked by TypeScript
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/ban-types": [
           "warn",
           { "types": { "object": false } }
         ]
+      }
+    },
+
+    {
+      "files": ["src/**/*.ts"],
+      "parserOptions": { "project": "tsconfig.json" }
+    },
+    {
+      "files": ["src-bin/**/*.ts"],
+      "parserOptions": { "project": "src-bin/tsconfig.json" },
+      "rules": {
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off"
       }
     },
 
