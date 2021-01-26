@@ -1,39 +1,29 @@
 import ts from "typescript";
+import { defaultsDeep } from "./defaults-deep.js";
 
 import type { Options } from "./types";
+import deepFreeze from "@fal-works/deep-freeze";
 
-const emptyObject = Object.freeze({});
-const nullReplacer = (code: string) => code;
-
-const baseOptions: Options = Object.freeze({
+/**
+ * Default values for `Options`.
+ */
+export const defaultOptions = deepFreeze({
   clean: false,
   include: ["**/*.{ts,tsx}"],
-  preTranspile: nullReplacer,
-  postTranspile: nullReplacer,
-  extensionMap: emptyObject,
+  preTranspile: (code: string) => code,
+  postTranspile: (code: string) => code,
+  extensionMap: {
+    ts: "js",
+    tsx: "jsx",
+  },
   write: true,
-  transpileOptions: emptyObject,
-});
+  transpileOptions: {
+    compilerOptions: {
+      target: ts.ScriptTarget.ES2015,
+      module: ts.ModuleKind.ES2015,
+    },
+  },
+} as Options);
 
-const defaultExtensionMap = Object.freeze({
-  ts: "js",
-  tsx: "jsx",
-});
-
-const defaultCompilerOptions: ts.CompilerOptions = Object.freeze({
-  target: ts.ScriptTarget.ES2015,
-  module: ts.ModuleKind.ES2015,
-});
-
-export const complementOptions = (
-  partialOptions?: Partial<Options>
-): Options => {
-  // maybe there's a better way
-  const options = { ...baseOptions, ...partialOptions };
-  options.extensionMap = { ...defaultExtensionMap, ...options.extensionMap };
-  options.transpileOptions.compilerOptions = {
-    ...defaultCompilerOptions,
-    ...options.transpileOptions.compilerOptions,
-  };
-  return options;
-};
+export const complementOptions = (partialOptions?: Partial<Options>): Options =>
+  defaultsDeep(partialOptions || {}, defaultOptions);

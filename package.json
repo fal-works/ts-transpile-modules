@@ -23,6 +23,8 @@
     "lib": "lib"
   },
   "dependencies": {
+    "@fal-works/deep-freeze": "^0.1.0",
+    "deepcopy": "^2.1.0",
     "fast-glob": "^3.2.5",
     "minimist": "^1.2.5",
     "typescript": "^4.1.3"

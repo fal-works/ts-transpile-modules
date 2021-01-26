@@ -32,7 +32,11 @@
         "prettier/@typescript-eslint"
       ],
       "rules": {
-        "no-fallthrough": "off" // already checked by TypeScript
+        "no-fallthrough": "off", // already checked by TypeScript
+        "@typescript-eslint/ban-types": [
+          "warn",
+          { "types": { "object": false } }
+        ]
       }
     },
 

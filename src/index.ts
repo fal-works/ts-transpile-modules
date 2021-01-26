@@ -8,6 +8,9 @@ import { complementOptions } from "./options/index.js";
 
 import type { Options } from "./options";
 
+export { defaultOptions } from "./options/index.js";
+export type { Options };
+
 /**
  * Result of transpiling a single source file.
  */
