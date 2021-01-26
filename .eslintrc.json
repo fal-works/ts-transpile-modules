@@ -25,6 +25,7 @@
       "files": ["src/**/*.ts", "src-bin/**/*.ts"],
       "plugins": ["@typescript-eslint"],
       "parser": "@typescript-eslint/parser",
+      "parserOptions": { "project": "tsconfig.json" },
       "extends": [
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
