@@ -1,5 +1,4 @@
 import ts from "typescript";
-import type { Pattern } from "../util/glob";
 
 /**
  * Options for `transpileModules()`.
@@ -19,14 +18,14 @@ export type Options = {
    *
    * *Note:* These should be relative from `srcDir`.
    */
-  include: Pattern[];
+  include: string[];
 
   /**
    * Glob pattern for source files to exclude.
    *
    * *Note:* These should be relative from `srcDir`.
    */
-  exclude?: Pattern[];
+  exclude?: string[];
 
   /**
    * Default: No operation.
