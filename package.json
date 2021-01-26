@@ -1,7 +1,7 @@
 {
   "name": "@fal-works/ts-transpile-modules",
   "description": "Transpile TypeScript modules into JavaScript.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "author": "FAL",
   "keywords": [
