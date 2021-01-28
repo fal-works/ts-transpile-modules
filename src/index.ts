@@ -26,7 +26,7 @@ export type Result = {
 export const transpileModules = async (
   srcDir: string,
   outDir: string,
-  options?: Partial<Options>
+  options?: Options
 ): Promise<Result[]> => {
   const {
     clean,

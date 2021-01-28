@@ -1,9 +1,6 @@
 import ts from "typescript";
 
-/**
- * Options for `transpileModules()`.
- */
-export type Options = {
+export type OptionFields = {
   /**
    * `true` for removing `outDir` before transpilation.
    *
@@ -58,3 +55,8 @@ export type Options = {
    */
   transpileOptions: ts.TranspileOptions;
 };
+
+/**
+ * Options for `transpileModules()`.
+ */
+export type Options = Partial<OptionFields>;

@@ -1,7 +1,7 @@
 import ts from "typescript";
 import { defaultsDeep } from "./defaults-deep.js";
 
-import type { Options } from "./types";
+import type { Options, OptionFields } from "./types";
 import deepFreeze from "@fal-works/deep-freeze";
 
 /**
@@ -23,7 +23,7 @@ export const defaultOptions = deepFreeze({
       module: ts.ModuleKind.ES2015,
     },
   },
-} as Options);
+} as OptionFields);
 
-export const complementOptions = (partialOptions?: Partial<Options>): Options =>
+export const complementOptions = (partialOptions?: Options): OptionFields =>
   defaultsDeep(partialOptions || {}, defaultOptions);
