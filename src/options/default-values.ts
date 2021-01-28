@@ -25,5 +25,8 @@ export const defaultOptions = deepFreeze({
   },
 } as OptionFields);
 
+/**
+ * Fills missing option fields.
+ */
 export const complementOptions = (partialOptions?: Options): OptionFields =>
   defaultsDeep(partialOptions || {}, defaultOptions);
