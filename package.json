@@ -42,10 +42,10 @@
   "scripts": {
     "build": "pnpm run build:lib & pnpm run build:bin",
     "build:lib": "rimraf lib && tsc && pnpm run format:lib",
-    "preformat:lib": "eslint --fix --no-ignore lib/**/*.js",
+    "preformat:lib": "eslint --fix --no-ignore lib/**/*.{js,ts}",
     "format:lib": "prettier --write lib/**/*.{js,ts}",
     "build:bin": "rimraf bin && tsc --project src-bin && pnpm run format:bin",
-    "preformat:bin": "eslint --fix --no-ignore bin/**/*.js",
+    "preformat:bin": "eslint --fix --no-ignore bin/**/*.{js,ts}",
     "format:bin": "prettier --write bin/**/*.{js,ts}",
     "lint": "eslint src/",
     "dogfood": "node test/dogfooding.js",
