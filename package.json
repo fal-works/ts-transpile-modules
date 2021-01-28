@@ -8,16 +8,20 @@
     "typescript",
     "build"
   ],
+  "homepage": "https://github.com/fal-works/ts-transpile-modules#readme",
+  "bugs": {
+    "url": "https://github.com/fal-works/ts-transpile-modules/issues"
+  },
   "files": [
     "lib",
     "src",
     "bin"
   ],
+  "main": "lib/index.js",
+  "module": "lib/index.js",
   "bin": {
     "ts-transpile-modules": "bin/main.js"
   },
-  "main": "lib/index.js",
-  "module": "lib/index.js",
   "type": "module",
   "directories": {
     "lib": "lib"
