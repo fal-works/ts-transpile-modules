@@ -1,11 +1,9 @@
 import * as path from "path";
 import ts from "typescript";
-
-import { rm, readFile, writeFile } from "./util/fs.js";
 import { glob } from "./util/glob.js";
+import { rm, readFile, writeFile } from "./util/fs.js";
 import { createExtensionReplacer } from "./util/extension.js";
 import { complementOptions } from "./options/index.js";
-
 import type { Options } from "./options";
 
 export { defaultOptions } from "./options/index.js";
