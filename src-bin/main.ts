@@ -3,7 +3,7 @@ import ts from "typescript";
 import { transpileModules } from "../lib/index.js";
 import { help } from "./help.js";
 
-const error = (message: any) => {
+const error = (message: unknown) => {
   console.error(message);
   process.exit(1);
 };
