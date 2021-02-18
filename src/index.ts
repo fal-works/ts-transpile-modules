@@ -48,7 +48,7 @@ export const transpileModules = async (
     const srcContent = await readFile(srcFile);
     const srcCode = srcContent.toString();
     const srcInfo = path.parse(srcFile);
-    const tsOut = ts.transpileModule(preTranspile(srcCode), {
+    const tsOut = ts.transpileModule(preTranspile(srcCode, srcFile), {
       fileName: srcInfo.base,
       moduleName: srcInfo.name,
       ...transpileOptions,
@@ -56,7 +56,7 @@ export const transpileModules = async (
 
     const outFileRelPath = replaceExtension(srcFileRelPath);
     const outFile = `${outDir}/${outFileRelPath}`;
-    const outCode = postTranspile(tsOut.outputText);
+    const outCode = postTranspile(tsOut.outputText, outFile);
     if (write) await writeFile(outFile, outCode);
 
     return {

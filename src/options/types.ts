@@ -27,12 +27,12 @@ export type OptionFields = {
   /**
    * Default: No operation.
    */
-  preTranspile: (code: string) => string;
+  preTranspile: (code: string, srcFilepath: string) => string;
 
   /**
    * Default: No operation.
    */
-  postTranspile: (code: string) => string;
+  postTranspile: (code: string, outFilepath: string) => string;
 
   /**
    * Mapping of extensions before/after transpilation.
