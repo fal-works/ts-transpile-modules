@@ -41,11 +41,7 @@
           "warn",
           { "fixToUnknown": true }
         ],
-        "@typescript-eslint/no-empty-function": "off",
-        "@typescript-eslint/ban-types": [
-          "warn",
-          { "types": { "object": false } }
-        ]
+        "@typescript-eslint/no-empty-function": "off"
       }
     },
     {
