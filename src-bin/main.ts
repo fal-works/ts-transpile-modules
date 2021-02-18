@@ -12,6 +12,7 @@ const args = mri(process.argv.slice(2), {
   alias: {
     srcDir: "s",
     outDir: "o",
+    help: "h",
   },
   default: {
     srcDir: "src",
