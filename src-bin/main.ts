@@ -1,4 +1,4 @@
-import minimist from "minimist";
+import mri from "mri";
 import ts from "typescript";
 import { transpileModules } from "../lib/index.js";
 import { help } from "./help.js";
@@ -8,7 +8,7 @@ const error = (message: any) => {
   process.exit(1);
 };
 
-const args = minimist(process.argv.slice(2), {
+const args = mri(process.argv.slice(2), {
   alias: {
     srcDir: "s",
     outDir: "o",
